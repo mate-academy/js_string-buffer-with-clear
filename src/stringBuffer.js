@@ -30,14 +30,15 @@
  */
 function makeBuffer() {
   let stringOfBuffer = '';
+  let getEmptyString = function() {
+    stringOfBuffer = '';
+  };
   return function resultOfBuffer(value) {
     if (value === undefined) {
       return stringOfBuffer;
     }
     stringOfBuffer += value;
-    resultOfBuffer.clear = function() {
-      stringOfBuffer = '';
-    };
+    resultOfBuffer.clear = getEmptyString;
   };
 }
 
