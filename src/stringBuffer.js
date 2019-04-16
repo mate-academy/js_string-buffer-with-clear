@@ -28,8 +28,34 @@
  *
  * @return {function}
  */
+// function makeBuffer() {
+//   // write code here
+//   let buffer = '';
+//   let funcBuffer = function(value) {
+//     if (value !== undefined) {
+//       buffer.push(value);
+//     }
+//     return buffer.join('');
+//   };
+//   funcBuffer.clear = function() {
+//     buffer = '';
+//   }
+//   return buffer;
+// }
+
 function makeBuffer() {
   // write code here
+  let buffer = '';
+  let buffFunc = function(value) {
+    if (value !== undefined) {
+      buffer += value;
+    }
+    return buffer;
+  };
+  buffFunc.clear = function() {
+    buffer = '';
+  };
+  return buffFunc;
 }
 
 module.exports = makeBuffer;
