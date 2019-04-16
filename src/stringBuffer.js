@@ -29,7 +29,23 @@
  * @return {function}
  */
 function makeBuffer() {
-  // write code here
+  let bufferStr = '';
+
+  function sumOrClear(str) {
+    if (!str && str !== 0) {
+      return bufferStr;
+    }
+
+    bufferStr += str;
+
+    return bufferStr;
+  };
+
+  sumOrClear.clear = () => {
+    bufferStr = '';
+  };
+
+  return sumOrClear;
 }
 
 module.exports = makeBuffer;
