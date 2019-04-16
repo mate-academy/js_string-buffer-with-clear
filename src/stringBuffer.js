@@ -31,7 +31,8 @@
 function makeBuffer() {
   let accumulator = '';
   function buffer(value = '') {
-    return (accumulator += value);
+    accumulator += value;
+    return accumulator;
   }
   buffer.clear = function() {
     accumulator = '';
