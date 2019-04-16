@@ -35,7 +35,6 @@ function makeBuffer() {
       return string;
     }
     string += value;
-    return string;
   };
 
   buffer.clear = function() {
