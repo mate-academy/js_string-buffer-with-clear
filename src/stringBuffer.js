@@ -30,16 +30,15 @@
  */
 function makeBuffer() {
   var result = '';
-  function add(buffer) {
+  function addBuffer(buffer) {
     if (buffer !== undefined) {
       result += buffer;
-    }
-    return result;
+    } else return result;
   };
-  add.clear = function() {
+  addBuffer.clear = function() {
     result = '';
   };
-  return add;
+  return addBuffer;
 };
 
 module.exports = makeBuffer;
