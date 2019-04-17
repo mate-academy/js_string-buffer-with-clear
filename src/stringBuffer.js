@@ -33,7 +33,7 @@ function makeBuffer() {
   return function bufferFunc(value = '') {
     bufferFunc.clear = function() {
       currentBuffer = '';
-    }
+    };
     currentBuffer += value;
     return currentBuffer;
   };
