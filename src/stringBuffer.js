@@ -33,8 +33,9 @@ function makeBuffer() {
   let func = function(arg) {
     if (arg !== undefined) {
       bufferArr.push(arg);
+    } else {
+      return bufferArr.join('');
     }
-    return bufferArr.join('');
   };
   func.clear = function() {
     bufferArr = [];
