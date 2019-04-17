@@ -30,9 +30,12 @@
  */
 function makeBuffer() {
   let str = '';
-  function buffer(arg = '') {
-    str += arg;
-    return str;
+  function buffer(arg) {
+    if (arg === undefined) {
+      return str;
+    } else {
+      str += arg;
+    }
   };
   buffer.clear = function() {
     str = '';
