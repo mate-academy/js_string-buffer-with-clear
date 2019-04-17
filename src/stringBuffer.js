@@ -34,7 +34,9 @@ function makeBuffer() {
     if (value !== undefined) {
       result += value;
     }
-    return result;
+    if (value === undefined) {
+      return result;
+    }
   };
   currentBuffer.clear = function() {
     result = '';
