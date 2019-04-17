@@ -29,18 +29,11 @@
  * @return {function}
  */
 function makeBuffer() {
-  // write code here
   let str = '';
-  function buffer(arg) {
-    if (arg === 0) {
-      arg = '0';
-    }
-    if (!arg) {
-      return str;
-    } else {
-      str += arg;
-    }
-  }
+  function buffer(arg = '') {
+    str += arg;
+    return str;
+  };
   buffer.clear = function() {
     str = '';
   };
