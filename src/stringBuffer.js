@@ -32,10 +32,9 @@ function makeBuffer() {
   // write code here
   let bufferedString = '';
   function buffer(nextWord) {
-    if (nextWord === undefined) {
-      return bufferedString;
+    if (arguments.length > 0) {
+      bufferedString += nextWord;
     }
-    bufferedString += nextWord;
     return bufferedString;
   };
   buffer.clear = function() {
