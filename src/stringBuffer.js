@@ -30,16 +30,18 @@
  */
 function makeBuffer() {
   let stringOfBuffer = '';
-  let getEmptyString = function() {
+  const getEmptyString = function() {
     stringOfBuffer = '';
   };
-  return function resultOfBuffer(value) {
+  const updateBuffer = function(value) {
     if (value === undefined) {
       return stringOfBuffer;
     }
     stringOfBuffer += value;
-    resultOfBuffer.clear = getEmptyString;
   };
+  updateBuffer.clear = getEmptyString;
+
+  return updateBuffer;
 }
 
 module.exports = makeBuffer;
