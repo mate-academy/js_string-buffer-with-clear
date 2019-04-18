@@ -31,10 +31,11 @@
 function makeBuffer() {
   let content = '';
   let buffer = function(value) {
-    if (arguments.length !== 0) {
+    if (arguments.length === 0) {
+      return content;
+    } else {
       content += value;
     }
-    return content;
   };
   buffer.clear = function() {
     content = '';
