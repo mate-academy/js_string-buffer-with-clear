@@ -29,13 +29,15 @@
  * @return {function}
  */
 function makeBuffer() {
-  let cashe = '';
+  let cache = '';
   function buffer(str = '') {
-    cashe += str;
-    return cashe;
+    if (str === '') {
+      return cache;
+    }
+    cache += str;
   }
   buffer.clear = function() {
-    cashe = '';
+    cache = '';
   };
   return buffer;
 }
