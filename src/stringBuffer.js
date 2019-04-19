@@ -32,13 +32,11 @@ function makeBuffer() {
   let bufferStr = '';
 
   function sumOrClear(str) {
-    if (!str && str !== 0) {
+    if (str === undefined) {
       return bufferStr;
     }
 
     bufferStr += str;
-
-    return bufferStr;
   };
 
   sumOrClear.clear = () => {
