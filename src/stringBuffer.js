@@ -32,10 +32,11 @@ function makeBuffer() {
   // write code here
   let buffer = '';
   let buffFunc = function(value) {
-    if (value !== undefined) {
+    if (arguments.length === 0) {
+      return buffer;
+    } else {
       buffer += value;
     }
-    return buffer;
   };
   buffFunc.clear = function() {
     buffer = '';
