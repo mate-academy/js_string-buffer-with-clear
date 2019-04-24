@@ -31,11 +31,10 @@
 function makeBuffer() {
   let result = '';
   let currentBuffer = function(value) {
-    if (value !== undefined) {
-      result += value;
-    }
     if (value === undefined) {
       return result;
+    } else {
+      result += value;
     }
   };
   currentBuffer.clear = function() {
