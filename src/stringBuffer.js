@@ -30,6 +30,22 @@
  */
 function makeBuffer() {
   // write code here
+  let result = '';
+ 
+    function buffer(str = '') {
+ 		return result += str;
+      }
+    buffer.clear = function() {
+     	result = '';
+      }
+  return buffer;
 }
 
+const buffer = makeBuffer();
+
+
+buffer('The breakfast at ');
+buffer(10);
+buffer(' AM');
+buffer.clear();
 module.exports = makeBuffer;
