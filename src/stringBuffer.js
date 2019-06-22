@@ -29,7 +29,18 @@
  * @return {function}
  */
 function makeBuffer() {
-  // write code here
+  let result = '';
+
+  function insideBuffer() {
+    result = (arguments.length > 0) ? result += arguments[0] : result;
+    return result;
+  };
+
+  insideBuffer.clear = function() {
+    result = '';
+  };
+
+  return insideBuffer;
 }
 
 module.exports = makeBuffer;
