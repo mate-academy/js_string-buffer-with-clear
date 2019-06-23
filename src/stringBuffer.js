@@ -30,6 +30,17 @@
  */
 function makeBuffer() {
   // write code here
+  let buffer = '';
+
+  const sumFunc = function(input) {
+    buffer = input === undefined ? buffer : buffer += input;
+    return buffer;
+  };
+
+  sumFunc.clear = () => {
+    buffer = '';
+  };
+  return sumFunc;
 }
 
 module.exports = makeBuffer;
