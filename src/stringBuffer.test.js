@@ -68,9 +68,9 @@ test('Many calls of buffer()', () => {
   buffer('asdfa');
   buffer('asdfa');
   buffer('asdfa');
-  buffer('asdfa');
+  buffer('asdfa', 'asdfa');
   expect(buffer())
-    .toBe('aaaaaaaaasdfaasdfaasdfaasdfa');
+    .toBe('aaaaaaaaasdfaasdfaasdfaasdfaasdfa');
 
   buffer('asdfa');
   buffer('asdfa');
@@ -78,7 +78,7 @@ test('Many calls of buffer()', () => {
   buffer('asdfa');
   buffer('AM');
   expect(buffer())
-    .toBe('aaaaaaaaasdfaasdfaasdfaasdfaasdfaasdfaasdfaasdfaAM');
+    .toBe('aaaaaaaaasdfaasdfaasdfaasdfaasdfaasdfaasdfaasdfaasdfaAM');
 });
 
 test('Many calls of buffer() along with buffer.clear()', () => {
