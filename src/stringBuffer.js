@@ -29,6 +29,21 @@
  * @return {function}
  */
 function makeBuffer() {
+  let container = '';
+
+  function addToContainer(item) {
+    if (item !== undefined) {
+      container += item;
+    }
+    return container;
+  };
+
+  addToContainer.clear = () => {
+    container = '';
+  };
+
+  return addToContainer;
+
   // write code here
 }
 
