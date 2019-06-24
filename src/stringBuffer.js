@@ -28,8 +28,24 @@
  *
  * @return {function}
  */
-function makeBuffer() {
-  // write code here
-}
+const makeBuffer = () => {
+  let string = '';
+
+  function result(...args) {
+    if (args.length > 0) {
+      for (const element of args) {
+        string += element;
+      }
+    }
+    return string;
+  }
+
+  result.clear = function() {
+    string = '';
+    return string;
+  };
+
+  return result;
+};
 
 module.exports = makeBuffer;
