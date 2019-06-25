@@ -30,6 +30,17 @@
  */
 function makeBuffer() {
   // write code here
+  let str = '';
+  function changeBuffer(words = '') {
+    str += words;
+    return str;
+  }
+
+  changeBuffer.clear = function() {
+    str = '';
+  };
+
+  return changeBuffer;
 }
 
 module.exports = makeBuffer;
