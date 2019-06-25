@@ -30,6 +30,20 @@
  */
 function makeBuffer() {
   // write code here
+  let result = '';
+  const inner = (b) => {
+    if (b !== undefined) {
+      result += b;
+    }
+
+    return result;
+  };
+
+  inner.clear = () => {
+    result = '';
+  };
+
+  return inner;
 }
 
 module.exports = makeBuffer;
