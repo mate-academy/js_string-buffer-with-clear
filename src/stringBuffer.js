@@ -29,7 +29,23 @@
  * @return {function}
  */
 function makeBuffer() {
-  // write code here
+  let previousValue = '';
+
+  const addValue = (currentValue) => {
+    if (currentValue || currentValue === 0 || currentValue === '') {
+      previousValue += currentValue;
+    }
+
+    return previousValue;
+  };
+
+  addValue.clear = function() {
+    previousValue = '';
+
+    return previousValue;
+  };
+
+  return addValue;
 }
 
 module.exports = makeBuffer;
