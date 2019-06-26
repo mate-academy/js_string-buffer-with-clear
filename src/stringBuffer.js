@@ -28,8 +28,20 @@
  *
  * @return {function}
  */
-function makeBuffer() {
-  // write code here
+function makeBuffer(firstBufferValue = '') {
+  let bufferValue = firstBufferValue;
+
+  function bufferFunction(newValue = '') {
+    bufferValue += newValue.toString();
+    return bufferValue;
+  }
+
+  bufferFunction.clear = function() {
+    bufferValue = '';
+    return bufferValue;
+  };
+
+  return bufferFunction;
 }
 
 module.exports = makeBuffer;
