@@ -28,8 +28,34 @@
  *
  * @return {function}
  */
+// function makeBuffer(args) {
+//   let memory = '';
+
+//   let device = {};
+
+//   device.clear = () => memory = '';
+
+//   device.writeAndRead = args => {
+//     if (arguments.length > 0) {
+//       memory = memory + '' + args;
+//     } else {
+//       return memory;
+//     }
+//   }
+
+//   return device;
+// }
+
 function makeBuffer() {
-  // write code here
+  let memory = '';
+
+  function buffer(params) {
+    return arguments.length > 0 ? (memory += params) : memory;
+  };
+
+  buffer.clear = () => memory = '';
+
+  return buffer;
 }
 
 module.exports = makeBuffer;
