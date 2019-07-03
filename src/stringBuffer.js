@@ -30,6 +30,21 @@
  */
 function makeBuffer() {
   // write code here
+  let someText = '';
+
+ function buffer(chunck) {
+    if (arguments.length > 0) {
+      someText += chunck;
+    } else { 
+      return someText;
+    }
+  };
+
+  buffer.clear = function() {
+    someText = '';
+  };
+
+  return buffer;
 }
 
 module.exports = makeBuffer;
