@@ -29,7 +29,22 @@
  * @return {function}
  */
 function makeBuffer() {
-  // write code here
+  let result = '';
+
+  function processBuffered(value) {
+    if (arguments.length > 0) {
+      result += value;
+      return result;
+    } else {
+      return result;
+    }
+  }
+
+  processBuffered.clear = function() {
+    result = '';
+  };
+
+  return processBuffered;
 }
 
 module.exports = makeBuffer;
