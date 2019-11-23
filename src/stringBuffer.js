@@ -28,8 +28,14 @@
  *
  * @return {function}
  */
-function makeBuffer() {
-  // write code here
+function makeBuffer(value) {
+  let result = '';
+  function buffer(str = '') {
+    result += str;
+    return result;
+  };
+  buffer.clear = () => result = '';  // eslint-disable-line
+  return buffer;
 }
 
 module.exports = makeBuffer;
