@@ -29,7 +29,17 @@
  * @return {function}
  */
 function makeBuffer() {
-  // write code here
+  let content = '';
+
+  return function buffer(str = '') {
+    content += str;
+
+    buffer.clear = function() {
+      content = '';
+    };
+
+    return content;
+  };
 }
 
 module.exports = makeBuffer;
