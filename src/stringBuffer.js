@@ -30,6 +30,7 @@
  */
 function makeBuffer(value = '') {
   let cache = '';
+
   function buffer(str = '') {
     cache += str;
 
