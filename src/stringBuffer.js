@@ -28,8 +28,22 @@
  *
  * @return {function}
  */
-function makeBuffer() {
-  // write code here
+function makeBuffer(value = '') {
+  let cache = '';
+
+  function buffer(str = '') {
+    cache += str;
+
+    return cache;
+  };
+
+  buffer.clear = function() {
+    cache = '';
+
+    return cache;
+  };
+
+  return buffer;
 }
 
 module.exports = makeBuffer;
