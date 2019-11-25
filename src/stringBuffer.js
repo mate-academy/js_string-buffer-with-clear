@@ -29,7 +29,16 @@
  * @return {function}
  */
 function makeBuffer() {
-  // write code here
+  let buffer = '';
+  return function f(addToBuffer) {
+    f.clear = function() {
+      buffer = '';
+    };
+    if (typeof addToBuffer === 'string' || typeof addToBuffer === 'number') {
+      buffer += addToBuffer;
+    }
+    return buffer;
+  };
 }
 
 module.exports = makeBuffer;
