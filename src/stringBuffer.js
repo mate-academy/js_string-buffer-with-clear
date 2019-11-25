@@ -29,15 +29,15 @@
  * @return {function}
  */
 function makeBuffer() {
-  let buffer = [];
+  let buffer = '';
   return function f(addToBuffer) {
     f.clear = function() {
-      buffer = [];
+      buffer = '';
     };
     if (typeof addToBuffer === 'string' || typeof addToBuffer === 'number') {
-      buffer.push(addToBuffer);
+      buffer += addToBuffer;
     }
-    return buffer.join('');
+    return buffer;
   };
 }
 
