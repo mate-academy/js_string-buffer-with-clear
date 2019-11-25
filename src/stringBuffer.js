@@ -34,7 +34,9 @@ function makeBuffer(value) {
     result += str;
     return result;
   };
-  buffer.clear = () => result = '';  // eslint-disable-line
+  buffer.clear = function() {
+    result = '';
+  };
   return buffer;
 }
 
