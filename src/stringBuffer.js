@@ -29,18 +29,15 @@
  * @return {function}
  */
 function makeBuffer() {
-  let prev = '';
+  let cachedString = '';
 
-  return function buffer(a) {
+  return function buffer(a = '') {
     buffer.clear = function() {
-      prev = '';
+      cachedString = '';
     };
+    cachedString += a;
 
-    if (a !== undefined) {
-      prev += a;
-    }
-
-    return prev;
+    return cachedString;
   };
 }
 
