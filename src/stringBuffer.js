@@ -37,8 +37,6 @@ function makeBuffer() {
     } else {
       return bufferResult;
     }
-
-    return func;
   }
 
   func.clear = function() {
