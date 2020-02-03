@@ -1,5 +1,7 @@
 'use strict';
 
+/* eslint-disable */
+
 const makeBuffer = require('./stringBuffer');
 
 test('Works with one call', () => {
