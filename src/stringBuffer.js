@@ -31,10 +31,8 @@
 function makeBuffer() {
   let bufferedValue = '';
 
-  return function bufferWithClear(value) {
-    if (value || value === 0 || value === '') {
-      bufferedValue += value;
-    }
+  return function bufferWithClear(value = '') {
+    bufferedValue += value;
 
     bufferWithClear.clear = () => {
       bufferedValue = '';
