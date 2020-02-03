@@ -31,8 +31,12 @@
 function makeBuffer() {
   let result = '';
 
-  function buffer(str = '') {
-    result += str;
+  function buffer(str) {
+    if (arguments.length > 0) {
+      result += str;
+
+      return result;
+    }
 
     return result;
   }
