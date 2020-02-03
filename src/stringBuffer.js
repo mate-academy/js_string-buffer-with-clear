@@ -29,7 +29,19 @@
  * @return {function}
  */
 function makeBuffer() {
-  // write code here
+  let cache = '';
+
+  const buffer = (value = '') => {
+    cache += value;
+
+    return cache;
+  };
+
+  buffer.clear = () => {
+    cache = '';
+  };
+
+  return buffer;
 }
 
 module.exports = makeBuffer;
