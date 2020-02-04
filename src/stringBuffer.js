@@ -40,7 +40,7 @@ function makeBuffer() {
   };
 
   buffer.clear = function() {
-    return (result = '');
+    result = '';
   };
 
   return buffer;
