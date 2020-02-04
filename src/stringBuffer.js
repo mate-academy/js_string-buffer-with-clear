@@ -30,11 +30,14 @@
  */
 function makeBuffer() {
   let cache = '';
-
   const bufferWithClear = function buffer(str = '') {
     buffer.clear = () => (cache = '');
 
-    return (cache += str);
+    if (arguments.length) {
+      return (cache += str);
+    }
+
+    return cache;
   };
 
   return bufferWithClear;
