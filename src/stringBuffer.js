@@ -30,9 +30,8 @@
  */
 function makeBuffer() {
   let cache = '';
-  const bufferWithClear = function buffer(str = '') {
-    buffer.clear = () => (cache = '');
 
+  function buffer(str = '') {
     if (arguments.length) {
       return (cache += str);
     }
@@ -40,7 +39,9 @@ function makeBuffer() {
     return cache;
   };
 
-  return bufferWithClear;
+  buffer.clear = () => (cache = '');
+
+  return buffer;
 }
 
 module.exports = makeBuffer;
