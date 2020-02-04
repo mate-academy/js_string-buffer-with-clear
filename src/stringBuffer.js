@@ -34,8 +34,6 @@ function makeBuffer() {
   function buffer(str) {
     if (arguments.length > 0) {
       result += str;
-
-      return result;
     }
 
     return result;
