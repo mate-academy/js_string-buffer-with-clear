@@ -31,17 +31,19 @@
 function makeBuffer() {
   let accumulator = '';
 
-  return function buffer(info) {
+  function buffer(info) {
     if (arguments.length === 0) {
       return accumulator;
     }
 
     accumulator += info;
-
-    buffer.clear = function() {
-      accumulator = '';
-    };
   };
+
+  buffer.clear = function() {
+    accumulator = '';
+  };
+
+  return buffer;
 }
 
 module.exports = makeBuffer;
