@@ -31,8 +31,8 @@
 function makeBuffer() {
   let str = '';
 
-  function buffer(enotherString = '') {
-    return (str += enotherString);
+  function buffer(value = '') {
+    return (str += value);
   };
 
   buffer.clear = () => (str = '');
