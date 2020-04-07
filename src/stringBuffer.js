@@ -29,7 +29,19 @@
  * @return {function}
  */
 function makeBuffer() {
-  // write code here
+  let str = '';
+
+  function nestedBuffer(value) {
+    str = (value !== undefined) ? str.concat(value) : str;
+
+    return str;
+  };
+
+  nestedBuffer.clear = () => {
+    str = '';
+  };
+
+  return nestedBuffer;
 }
 
 module.exports = makeBuffer;
