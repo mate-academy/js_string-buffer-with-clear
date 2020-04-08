@@ -30,6 +30,22 @@
  */
 function makeBuffer() {
   // write code here
+  let str = '';
+
+  const buffer = (value) => {
+    if (value === undefined) {
+      return str;
+    } else {
+      str += value;
+    }
+  };
+
+  buffer.clear = () => {
+    // eslint-disable-next-line no-return-assign
+    return str = '';
+  };
+
+  return buffer;
 }
 
 module.exports = makeBuffer;
