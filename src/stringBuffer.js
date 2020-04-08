@@ -32,11 +32,11 @@ function makeBuffer() {
   // write code here
   let result = '';
 
-  return function f(b) {
-    f.clear = () => {
-      result = '';
-    };
+  f.clear = () => {
+    result = '';
+  };
 
+  function f(b) {
     if (b === undefined) {
       return result;
     }
@@ -44,6 +44,8 @@ function makeBuffer() {
 
     return result;
   };
+
+  return f;
 }
 
 module.exports = makeBuffer;
