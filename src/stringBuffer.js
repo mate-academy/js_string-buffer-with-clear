@@ -30,6 +30,19 @@
  */
 function makeBuffer() {
   // write code here
+  let resStr = '';
+
+  function _buff(str = '') {
+    resStr += str;
+
+    return resStr;
+  }
+
+  _buff.clear = () => {
+    resStr = '';
+  };
+
+  return _buff;
 }
 
 module.exports = makeBuffer;
