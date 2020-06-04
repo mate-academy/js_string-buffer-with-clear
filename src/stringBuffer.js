@@ -29,7 +29,21 @@
  * @return {function}
  */
 function makeBuffer() {
-  // write code here
+  let words = '';
+
+  return function buffer(word) {
+    if (word !== undefined) {
+      words += word;
+    }
+
+    buffer.clear = function() {
+      words = '';
+
+      return words;
+    };
+
+    return words;
+  };
 }
 
 module.exports = makeBuffer;
