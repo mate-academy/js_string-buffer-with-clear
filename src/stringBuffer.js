@@ -29,7 +29,19 @@
  * @return {function}
  */
 function makeBuffer() {
-  // write code here
+  let resultString = '';
+
+  const buffer = (subString = '') => {
+    resultString += subString;
+
+    return resultString;
+  };
+
+  buffer.clear = () => {
+    resultString = '';
+  };
+
+  return buffer;
 }
 
 module.exports = makeBuffer;
