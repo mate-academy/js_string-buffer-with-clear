@@ -30,6 +30,21 @@
  */
 function makeBuffer() {
   // write code here
+  const buff = [];
+
+  const buf = function(stored) {
+    if (stored === undefined) {
+      return buff.join('');
+    } else {
+      buff.push(stored);
+    }
+  };
+
+  buf.clear = function() {
+    buff.length = 0;
+  };
+
+  return buf;
 }
 
 module.exports = makeBuffer;
