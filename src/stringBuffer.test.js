@@ -161,6 +161,7 @@ test('Works with a lot of whitespaces', () => {
 
   expect(buffer())
     .toBe('                    10    ');
+
   buffer.clear();
 
   expect(buffer())
