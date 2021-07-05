@@ -29,7 +29,19 @@
  * @return {function}
  */
 function makeBuffer() {
-  // write code here
+  let stringOfBuffer = '';
+  const getEmptyString = function() {
+    stringOfBuffer = '';
+  };
+  const updateBuffer = function(value) {
+    if (value === undefined) {
+      return stringOfBuffer;
+    }
+    stringOfBuffer += value;
+  };
+  updateBuffer.clear = getEmptyString;
+
+  return updateBuffer;
 }
 
 module.exports = makeBuffer;
