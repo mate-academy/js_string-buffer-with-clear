@@ -29,7 +29,16 @@
  * @return {function}
  */
 function makeBuffer() {
-  // write code here
+  let cachedString = '';
+
+  return function buffer(a = '') {
+    buffer.clear = function() {
+      cachedString = '';
+    };
+    cachedString += a;
+
+    return cachedString;
+  };
 }
 
 module.exports = makeBuffer;
