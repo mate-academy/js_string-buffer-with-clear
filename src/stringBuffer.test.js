@@ -119,6 +119,7 @@ test('Many calls of buffer() along with buffer.clear()', () => {
 
   expect(buffer())
     .toBe('asdfaasdfa');
+
   buffer('asdfa');
   buffer('asdfa');
 
@@ -161,6 +162,7 @@ test('Works with a lot of whitespaces', () => {
 
   expect(buffer())
     .toBe('                    10    ');
+
   buffer.clear();
 
   expect(buffer())
