@@ -123,6 +123,7 @@ test('Many calls of buffer() along with buffer.clear()', () => {
   buffer('asdfa');
 
   expect(buffer())
+
     .toBe('asdfaasdfaasdfaasdfa');
 
   buffer('asdfa');
