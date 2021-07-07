@@ -30,6 +30,16 @@
  */
 function makeBuffer() {
   // write code here
+  let cash = '';
+
+  function buffer(str = '') {
+    cash += str;
+    return cash;
+  }
+  buffer.clear = function () {
+    cash = '';
+  }
+  return buffer;
 }
 
 module.exports = makeBuffer;
