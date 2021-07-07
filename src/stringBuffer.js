@@ -28,8 +28,23 @@
  *
  * @return {function}
  */
+
 function makeBuffer() {
-  // write code here
+  let bufferedString = '';
+
+  function buffer(part) {
+    if (arguments.length) {
+      bufferedString += part;
+    }
+
+    return bufferedString;
+  }
+
+  buffer.clear = function() {
+    bufferedString = '';
+  };
+
+  return buffer;
 }
 
 module.exports = makeBuffer;
