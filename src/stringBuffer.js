@@ -30,6 +30,18 @@
  */
 function makeBuffer() {
   // write code here
+  let buffer = '';
+  let buffFunc = function(value) {
+    if (arguments.length === 0) {
+      return buffer;
+    } else {
+      buffer += value;
+    }
+  };
+  buffFunc.clear = function() {
+    buffer = '';
+  };
+  return buffFunc;
 }
 
 module.exports = makeBuffer;
