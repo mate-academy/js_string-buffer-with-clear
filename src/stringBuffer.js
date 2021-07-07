@@ -28,8 +28,17 @@
  *
  * @return {function}
  */
-function makeBuffer() {
-  // write code here
-}
+const makeBuffer = () => {
+  let cache = '';
+  const buffer = (str = '') => {
+    cache += str;
+    return cache;
+  };
+  buffer.clear = () => {
+    cache = '';
+    return cache;
+  };
+  return buffer;
+};
 
 module.exports = makeBuffer;
